@@ -9,11 +9,15 @@ const navigator = createStackNavigator(
     Screen: Screen
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Screen",
     defaultNavigationOptions: {
       title: "App",
+      headerTitleAlign: 'center',
+      headerStyle: {
+        backgroundColor: '#F5B7B1'
+      }
     },
-  }
+  },
 );
 
 export default createAppContainer(navigator);
