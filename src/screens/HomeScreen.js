@@ -3,19 +3,15 @@ import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native"
 
 const HomeScreen = ({navigation}) => {
 
-  const [numero, setNumero] = useState(1)
-
-  const sumarNumero = () => {
-    setNumero(numero+1)
-  }
-
   return (
     <View>
-      <Text style={styles.text}>Numero de Clicks: {numero}</Text>
+      <Text style={styles.text}>React Native</Text>
+
       <Button 
         title="Go to Components Demo"
         onPress={() => navigation.navigate('Screen')}
       />
+
       <TouchableOpacity 
         onPress={() => navigation.navigate('List')}
         style={styles.navTouchable}  
@@ -24,6 +20,16 @@ const HomeScreen = ({navigation}) => {
           style={styles.navText}
         > Go to List Demo</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity 
+        onPress={() => navigation.navigate('Images')}
+        style={styles.navTouchable}  
+      >
+        <Text
+          style={styles.navText}
+        > Go to Images</Text>
+      </TouchableOpacity>
+
     </View>
   )
   ;
