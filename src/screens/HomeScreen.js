@@ -7,10 +7,14 @@ const HomeScreen = ({navigation}) => {
     <View>
       <Text style={styles.text}>React Native</Text>
 
-      <Button 
-        title="Go to Components Demo"
+      <TouchableOpacity 
         onPress={() => navigation.navigate('Screen')}
-      />
+        style={styles.navTouchable}  
+      >
+        <Text
+          style={styles.navText}
+        > Go to Welcome</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity 
         onPress={() => navigation.navigate('List')}
@@ -18,7 +22,7 @@ const HomeScreen = ({navigation}) => {
       >
         <Text
           style={styles.navText}
-        > Go to List Demo</Text>
+        > Go to List</Text>
       </TouchableOpacity>
 
       <TouchableOpacity 
@@ -30,6 +34,33 @@ const HomeScreen = ({navigation}) => {
         > Go to Images</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity 
+        onPress={() => navigation.navigate('Counter')}
+        style={styles.navTouchable}  
+      >
+        <Text
+          style={styles.navText}
+        > Go to counter</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        onPress={() => navigation.navigate('Colors')}
+        style={styles.navTouchable}  
+      >
+        <Text
+          style={styles.navText}
+        > Go to Colors</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        onPress={() => navigation.navigate('Square')}
+        style={styles.navTouchable}  
+      >
+        <Text
+          style={styles.navText}
+        > Go to Square</Text>
+      </TouchableOpacity>
+
     </View>
   )
   ;
@@ -38,7 +69,8 @@ const HomeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   text: {
     fontSize: 30,
-    marginBottom: 20
+    marginBottom: 20,
+    textAlign: 'center'
   },
   navTouchable: {
     backgroundColor: '#5499C7',
