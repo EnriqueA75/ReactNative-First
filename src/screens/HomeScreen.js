@@ -61,6 +61,15 @@ const HomeScreen = ({navigation}) => {
         > Go to Square</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity 
+        onPress={() => navigation.navigate('Text')}
+        style={styles.navTouchable}  
+      >
+        <Text
+          style={styles.navText}
+        > Go to Text</Text>
+      </TouchableOpacity>
+
     </View>
   )
   ;
@@ -73,7 +82,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   navTouchable: {
-    backgroundColor: '#5499C7',
+    backgroundColor: '#76448A',
     marginTop: '6%',
   },
   navText: {

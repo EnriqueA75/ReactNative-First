@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+
+
+const reducer = (state, action) => {
+    switch(action.type){
+        case 'increase':
+           return {...state, counter: state.counter + action.payload}
+        case 'decrease':
+            return (state.counter <= 0) ? state :  {...state, counter: state.counter + action.payload}
+        default: 
+            return state;
+    }
+}
+
+
 const CounterScreen = () => {
 
-    const [counter, setCounter] = useState(0)
+    const [state, dispatch] = useReducer(reducer, {counter: 0})
+    const { counter } = state
 
-    const handleIncrease = () => {
-        setCounter(counter+1)
-    }
-    const handleDecrease = () => {
-        setCounter(counter-1)
-    }
     return ( 
         <View  style={styles.containerStyles}  >
 
         <TouchableOpacity 
-            onPress={() => handleIncrease()}
+            onPress={() => dispatch({type: 'increase', payload: 1})}
             style={styles.btnTouchable}  
         >
             <Text
@@ -23,7 +32,7 @@ const CounterScreen = () => {
         </TouchableOpacity>
 
         <TouchableOpacity 
-            onPress={() => handleDecrease()}
+            onPress={() => dispatch({type: 'decrease', payload: -1})}
             style={styles.btnTouchable}  
         >
         <Text

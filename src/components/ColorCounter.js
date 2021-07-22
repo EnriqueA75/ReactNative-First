@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
-const ColorCounter = ({color, onIncrease, onDecrease, red, green, blue}) => {
+const ColorCounter = ({color, onIncrease, onDecrease}) => {
     
     return ( 
         <ScrollView>
